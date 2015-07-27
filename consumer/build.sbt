@@ -21,3 +21,5 @@ libraryDependencies ++= Seq(
 dependencyOverrides ++= Set(
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.4.4"
 )
+
+enablePlugins(JavaAppPackaging)
