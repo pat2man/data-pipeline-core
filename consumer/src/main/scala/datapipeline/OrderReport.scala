@@ -18,9 +18,6 @@ object OrderReport {
 
   def main(args: Array[String]): Unit = {
 
-    // Checkpoint
-    streamingContext.checkpoint("checkpoint")
-
     // Create order stream from kafka topic
     val ordersJson = KafkaConfig.createStream(streamingContext, topics = Map("order-topic" -> 1))
     val orders = ordersJson.flatMap(Json.parse(_).asOpt[Order])
